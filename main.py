@@ -42,4 +42,18 @@ if __name__ == "__main__":
         host=settings.HOST,
         port=settings.PORT,
         reload=True,
+        log_config={
+            "version": 1,
+            "disable_existing_loggers": False,
+            "handlers": {
+                "file": {
+                    "class": "logging.FileHandler",
+                    "filename": "server.log",
+                },
+            },
+            "root": {
+                "level": "INFO",
+                "handlers": ["file"],
+            },
+        }
     )
